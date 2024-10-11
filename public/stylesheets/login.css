@@ -1,0 +1,141 @@
+/* General container for flex centering */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 내비게이션 */
+.main-nav {  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  height: 80px;  
+  font-size: 16px;
+}
+
+.main-nav .logo img {  
+  width: 150px;  
+  margin: 10px 0 0 10px;
+}
+
+.main-nav ul {  
+  display: flex;
+}
+
+.main-nav ul li {  
+  padding: 25px 20px;
+}
+
+.main-nav ul li a {  
+  padding-bottom: 4px;  
+  color: #262626;  
+  font-size: 16px;
+}
+
+.main-nav ul li a:hover {  
+  border-bottom: 2px solid #262626;
+}
+
+.main-nav ul li a.login:hover {  
+  border-bottom: none;
+}
+
+.main-nav ul.main-menu {  
+  flex: 1;  
+  margin-left: 20px;
+}
+
+.main-nav ul.right-menu i {  
+  margin-left: 3px;  
+  font-size: 20px;
+}
+
+.main-nav .menu-btn {  
+  display: none;  
+  cursor: pointer;
+}
+
+/* Flex wrapper to center the content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Footer always at the bottom */
+footer {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Login Container Styling */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Input field styling */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2db400;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #28a000;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Adjust the header logo alignment */
+header .logo img {
+  width: 150px;
+  margin: 10px 0;
+}
+
+/* Ensure that header items are in the correct position */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}

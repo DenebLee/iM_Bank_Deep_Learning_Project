@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="../../../Desktop/Deep_Project/Test/public/model.css">
+  <link rel="stylesheet" href="../../../Desktop/Deep_Project/Test/public/reset.css">
+  <link rel="stylesheet" href="common.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- JS File -->
+  <script src="../../../Desktop/Deep_Project/Test/app.js"></script>
+  <script src="app2.js"></script>
+
+
+  <title>SkinInsight 모델링</title>
+</head>
+
+<body>
+  <header id="header-placeholder"></header>
+
+  <main>
+
+    <section id="brand-story"></section>
+    <div class="section section-brand-intro">
+      <blockquote>이미지 업로드 안내사항</blockquote>
+      <p>1. <span class="important">Snow AI 보정 사용하지 마세요.</span> 아무리 0.1% 자기얼굴이라고 해도 아닌건 아닙니다.</p>
+      <p>2. 화질 저하된 이미지에 대한 정확도가 떨어질 수 있으므로 <span class="important">저화질의 기기로 촬영한 사진은 사용 불가합니다.</span></p>
+      <p>3. 머리가 중앙에 위치해야 하며, <span class="important">얼굴과 어깨는 정면</span>을 향해야 합니다.</p>
+      <p>4. 머리카락이나 안경으로 상세한 얼굴 분석을 방해가 될 수 있기에 <span class="important">안경은 벗어주시고 머리카락은 정돈하여 주십시오.</span></p>
+      <p>5. 지원 이미지 파일 확장자는 .jpg, .jpeg, .png, .bmp, .tif, .tiff, .webp가 지원됩니다.</p>
+      <p>6. 지원 이미지 파일 사이즈는 최대 5MB가 지원됩니다.</p>
+    </div>
+  </section>
+
+  <section id="photo-guidelines">
+    <!-- Photo Examples Section -->
+    <div class="photo-examples">
+      <!-- Example 1 - Correct -->
+      <div class="example correct">
+        <img src="../images/ai_p.jpg" alt="Correct Example">
+        <div class="checkmark"></div>
+        <p>Ai 보정 X</p>
+      </div>
+  
+      <!-- Example 2 - Incorrect -->
+      <div class="example incorrect">
+        <img src="../images/front.jpg" alt="Incorrect Example 1">
+        <div class="cross"></div>
+        <p>올바른 사진 형식 (정면, 근접)</p>
+      </div>
+  
+      <!-- Example 3 - Incorrect -->
+      <div class="example incorrect">
+        <img src="../images/minji.jpg" alt="Incorrect Example 2">
+        <div class="cross"></div>
+        <p>옆모습 불가, 정면 사진만 가능</p>
+      </div>
+  
+      <!-- Example 4 - Incorrect -->
+      <div class="example incorrect">
+        <img src="../images/images.jpeg" alt="Incorrect Example 3">
+        <div class="cross"></div>
+        <p>안경으로 인해 얼굴 면적가려짐</p>
+      </div>
+    </div>
+  </section>
+    <section id="image-upload-section">
+  <h2>피부 분석을 위한 이미지 업로드</h2>
+  <div id="upload-container">
+    <div id="drop-area">
+      <p>드래그 & 드랍으로 이미지 업로드 <br> 또는 파일찾기를 통해 업로드</p>
+      <button id="file-upload-btn">Choose Image</button>
+      <input type="file" id="file-input" accept="image/*" hidden>
+    </div>
+    <div id="image-preview">
+      <img id="uploaded-image" src="" alt="Uploaded Image" style="max-width: 100%; display: none;">
+    </div>
+  </div>
+  <button id="upload-image-btn">Upload Image</button>
+
+
+
+<section id="upload-result" style="display: none;">
+  <div id="image-preview">
+    <!-- 이미지 미리보기가 여기에 동적으로 삽입됩니다 -->
+    <img id="uploaded-image" src="" alt="Uploaded Image" style="max-width: 100%; display: none;">
+  </div>
+  
+  <div class="face-analysis-container">
+    <!-- Forehead Analysis -->
+    <div class="face-area forehead">
+      <h3>이마</h3>
+      <div class="analysis-card" id="forehead-result">
+        <!-- 이마 결과가 여기에 동적으로 삽입됩니다 -->
+      </div>
+    </div>
+
+    <!-- Left Cheek Analysis -->
+    <div class="face-area left-cheek">
+      <h3>왼쪽 볼</h3>
+      <div class="analysis-card" id="left-cheek-result">
+        <!-- 왼쪽 볼 결과가 여기에 동적으로 삽입됩니다 -->
+      </div>
+    </div>
+
+    <!-- Right Cheek Analysis -->
+    <div class="face-area right-cheek">
+      <h3>오른쪽 볼</h3>
+      <div class="analysis-card" id="right-cheek-result">
+        <!-- 오른쪽 볼 결과가 여기에 동적으로 삽입됩니다 -->
+      </div>
+    </div>
+</section>
+<section>
+  <canvas id="probabilityChart" width="400" height="200"></canvas>
+</section>
+
+<section id="cosmetics-section" style="display: none; padding: 20px; overflow-x: auto;">
+  <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #333;">피부 타입 결과에 따른 화장품 추천!</h2>
+  <table id="cosmetics-table" style="width:100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <thead>
+      <tr style="background-color: #f5f5f5; text-align: left;">
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">상품명</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">브랜드</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">가격</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">제품 타입</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">피부 타입</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">수분 타입</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">색소 타입</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">모공 타입</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">설명</th>
+        <th style="padding: 10px; border-bottom: 2px solid #ddd;">이미지</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 데이터 행이 여기에 동적으로 추가됩니다 -->
+    </tbody>
+  </table>
+  <button id="load-more-btn" style="display: none; margin-top: 20px; padding: 10px;">더보기</button>
+</section>
+
+
+
+<section id="expert-consult-section" style="text-align: center; padding: 50px 0; display: none;">
+  <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #333;">내 피부 상담하기</h2>
+  <p style="font-size: 1.2rem; margin-bottom: 30px; color: #555;">
+    피부 분석 결과를 기반으로 전문가와 상담하세요!
+  </p>
+  <button id="consult-btn" style="padding: 15px 30px; font-size: 1.2rem; color: #fff; background-color: #00c19b; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+    상담 시작
+  </button>
+</section>
+
+<section id="expert-response-section" style="display:none; padding: 30px 0;">
+  <div id="expert-response" style="max-width: 800px; margin: 0 auto;">
+    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">전문가의 답변 (gemma)</h3>
+    <p id="gemma-response"></p>  <!-- Dynamic text will be inserted here -->
+  </div>
+</section>
+
+  </main>
+
+  <footer class="child">
+    <!-- container -->
+    <div class="container">
+      <div class="etc">
+        <span class="copyright">Copyright JeongSeob LEE. All Rights Reserved</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script src="../../../Desktop/Deep_Project/Test/public/model.js"></script>
+<script src="./login.js"></script>
+<script src="./header.js"></script>
+
+</html>

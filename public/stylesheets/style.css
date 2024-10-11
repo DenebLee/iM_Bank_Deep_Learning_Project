@@ -1,0 +1,1012 @@
+/* General Container */
+html, body {
+  height: 100%;
+}
+
+.container {
+  width: 84%;
+  margin: 0 auto;
+  height:100%;
+}
+
+/* Header Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  font-size: 16px;
+}
+
+.main-nav .logo img {
+  width: 150px;
+  margin: 10px 0 0 10px;
+}
+
+.main-nav ul {
+  display: flex;
+}
+
+.main-nav ul li {
+  padding: 25px 20px;
+}
+
+.main-nav ul li a {
+  padding-bottom: 4px;
+  color: #262626;
+  font-size: 16px;
+}
+
+.main-nav ul li a:hover {
+  border-bottom: 2px solid #262626;
+}
+
+.main-nav ul li a.login:hover {
+  border-bottom: none;
+}
+
+.main-nav ul.main-menu {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.main-nav ul.right-menu i {
+  margin-left: 3px;
+  font-size: 20px;
+}
+
+.main-nav .menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+/* Section 1: Banner */
+#section01 .banner01 {
+  position: relative;
+  height: 600px;
+  background: url('images/aesop2.jpg') center no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#section01 .banner01 .banner-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
+}
+
+#section01 .banner01 .banner-info h2 {
+  font-size: 3em;
+}
+
+#section01 .banner01 .banner-info .btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #262626;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* Section 2 */
+#section02 {
+  padding: 150px 0; /* Increased padding for more space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#section02 img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Section 3: Skin Types */
+#section03 {
+  padding: 60px 0;
+}
+
+#section03 .banner {
+  position: relative;
+  height: 600px;
+  background: url(images/ai.jpg);
+}
+
+#section03 .banner .banner-info {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#section03 .banner .banner-info h2 {
+  font-size: 3em;
+}
+
+#section03 .banner .banner-info .btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #262626;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* Grid Layout */
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.row .col a {
+  color: #000;
+}
+
+.row .col a h2 {
+  padding-top: 20px;
+  font-size: 1.2em;
+}
+
+.row .col a img {
+  width: 100%;
+}
+
+.row .col .shopNow {
+  display: inline-block;
+  color: #4a83c6;
+  font-weight: bold;
+  margin: 10px 5px 0 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 1400px) {
+  #section01 .banner01 {
+      background-position: -400px;
+  }
+
+  .main-nav ul.right-menu a.search {
+      display: none;
+  }
+
+  .main-nav ul.right-menu a.cart {
+      display: none;
+  }
+
+  .main-nav ul.right-menu a.login {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  header .container {
+      width: 100%;
+  }
+
+  #section01 .container {
+      width: 100%;
+  }
+
+  .row {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Responsive for Smaller Devices */
+@media screen and (max-width: 860px) {
+  .main-nav {
+      position: relative;
+  }
+
+  .main-nav .logo img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 14px;
+  }
+
+  .main-nav ul.main-menu {
+      display: block;
+      position: absolute;
+      top: 56px;
+      left: -20px;
+      right: 0;
+      background-color: #fff;
+      z-index: 2;
+      transform: translateX(-10000px);
+      opacity: 0.9;
+  }
+
+  .main-nav ul.main-menu.show {
+      transform: translateX(0);
+  }
+  
+
+  .main-nav ul.right-menu a.sitemap {
+      display: none;
+  }
+
+  .main-nav ul.right-menu a.search+i {
+      position: absolute;
+      left: 60px;
+  }
+
+  .main-nav .menu-btn {
+      display: block;
+      position: absolute;
+      left: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .row {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#test {
+  margin-top: 100px;
+}
+
+/* 기본 헤더 스타일 */
+#header2 {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out;
+}
+
+/* 스크롤시 고정되는 스타일 */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+
+
+/* Navigation Menu */
+.main-nav2 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0; /* Add padding for spacing */
+  border-bottom: 1px solid #ddd; /* Optional: Add border to separate the nav from content */
+}
+
+/* Navigation Links */
+.main-nav2 li {
+  list-style: none;
+}
+
+.main-nav2 li a {
+  text-decoration: none;
+  color: #999;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  transition: border-bottom 0.3s ease; /* Smooth underbar effect */
+}
+
+.main-nav2 li a.active {
+  color: #00c19b;
+  border-bottom: 2px solid #00c19b; /* Add underbar for active links */
+}
+
+.main-nav2 li a:hover {
+  color: #00c19b;
+  border-bottom: 2px solid #00c19b; /* Underbar on hover */
+}
+
+
+/* Ai Analysis Section */
+#ai-analysis {
+  background-color: #2ac3ad;
+  padding: 150px 0;
+  margin-bottom: 7%;
+}
+
+.container_section2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ai-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.text-section {
+  color: #fff;
+  max-width: 600px;
+  text-align: left;
+}
+
+.text-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.text-section .highlight {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.btn-start {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.image-section img {
+  width: 450px;
+  border-radius: 20px;
+  margin-left: 100px;
+}
+
+/* Responsive for Ai Analysis Section */
+@media (max-width: 1024px) {
+  .text-section h1 {
+      font-size: 3rem;
+  }
+
+  .text-section p {
+      font-size: 1.3rem;
+  }
+
+  .image-section img {
+      width: 350px;
+      margin-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .text-section {
+      text-align: center;
+      max-width: 100%;
+  }
+
+  .image-section img {
+      margin-left: 0;
+      width: 300px;
+      margin-top: 20px;
+  }
+
+  .btn-start {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
+
+  .text-section h1 {
+      font-size: 2.5rem;
+  }
+
+  .text-section p {
+      font-size: 1.2rem;
+  }
+}
+
+
+
+/* Skin Type Section */
+#WHAT {
+  background-color: #fff;
+  padding: 100px 0; /* Increase padding to add space */
+  text-align: center;
+  width: 100%;
+  height:100%;
+}
+
+#WHAT h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00c19b;
+}
+
+#WHAT p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Skin Types */
+.skin-types {
+  position: relative;
+  height: 400px; /* Adjust the height as needed */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circular skin type elements */
+.skin-type {
+  text-align: center;
+  position: absolute;
+  animation: none; /* Remove rotation animation */
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.circle:hover {
+  transform: scale(1.1);
+}
+
+/* Positioning circles based on your reference image */
+.skin-type:nth-child(1) { /* OS+ */
+  top: 60%;
+  left: 15%;
+}
+
+.skin-type:nth-child(2) { /* ON+ */
+  top: 50%;
+  left: 35%;
+}
+
+.skin-type:nth-child(3) { /* DS+ */
+  top: 35%;
+  left: 60%;
+}
+
+.skin-type:nth-child(4) { /* DN+ */
+  top: 30%;
+  left: 80%;
+}
+
+.skin-type:nth-child(5) { /* OS- */
+  top: 80%;
+  left: 50%;
+}
+
+.skin-type:nth-child(6) { /* ON- */
+  top: 75%;
+  left: 25%;
+}
+
+.skin-type:nth-child(7) { /* DS- */
+  top: 20%;
+  left: 25%;
+}
+
+.skin-type:nth-child(8) { /* DN- */
+  top: 20%;
+  left: 70%;
+}
+
+/* Skin Type Circle Colors */
+.os-plus {
+  background-color: #f6a623;
+}
+
+.on-plus {
+  background-color: #50e3c2;
+}
+
+.ds-plus {
+  background-color: #7ed321;
+}
+
+.dn-plus {
+  background-color: #f54e42;
+}
+
+.os-minus {
+  background-color: #4a90e2;
+}
+
+.on-minus {
+  background-color: #b8e986;
+}
+
+.ds-minus {
+  background-color: #e96767;
+}
+
+.dn-minus {
+  background-color: #d0021b;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 1024px) {
+  #WHAT {
+    padding: 80px 0;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skin-type {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skin-types {
+    height: auto;
+  }
+
+  /* Stack circles vertically */
+  .skin-type {
+    position: static;
+    margin: 20px;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle {
+    width: 60px;
+    height: 60px;
+  }
+
+}
+
+/* Section for Skin Health Management */
+#skin-health-management {
+  background-color: #f7f7f7;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#skin-health-management h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#skin-health-management p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.highlight {
+  color: #00c19b;
+  font-weight: bold;
+}
+
+/* Cards Container */
+.container_section3 .cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .container_section3 .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Individual Cards */
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(70px); /* Slightly moved down */
+  transition: opacity 2s ease-out, transform 2s ease-out; /* Slower transition */
+}
+
+.card.visible {
+  opacity: 10; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+  }
+}
+.card.visible img, 
+.card.visible h3, 
+.card.visible p {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(50px); /* Make the text and image have the same translate effect */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Apply same transition as the card */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateY(50px); /* Make the text and image have the same translate effect */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Apply same transition as the card */
+}
+
+.card .highlight {
+  color: #00c19b;
+  opacity: 0;
+  transform: translateY(50px); /* Make the text and image have the same translate effect */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Apply same transition as the card */
+}
+
+/* Circle Style */
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 20px auto;
+}
+
+.ds-minus {
+  background-color: #e96767;
+}
+
+/* Score Section */
+.score {
+  margin: 20px 0;
+}
+
+.score p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+
+.up {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.progress.water {
+  width: 80%; /* Adjust this based on the score */
+  background-color: #00c19b;
+}
+
+.progress.oil {
+  width: 100%; /* Adjust this based on the score */
+  background-color: #f54e42;
+}
+
+/* Solution Recommendation Section */
+.solution {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .solution {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.solution .label {
+  padding: 8px 15px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.solution .label.active {
+  background-color: #00c19b;
+  color: #fff;
+}
+/* 제품 섹션 */
+.product {
+  position: relative; /* 텍스트를 이미지 위에 배치하기 위한 포지션 설정 */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 100px;
+  justify-content: center; /* 텍스트를 중앙에 정렬 */
+}
+
+.product img {
+  width: 100px; /* 이미지 크기 조정 */
+  height: 100px;
+  border-radius: 8px;
+}
+
+.product .product-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 텍스트를 중앙에 배치 */
+  color: #000; /* 텍스트 색상 */
+  font-weight: bold; /* 텍스트 굵게 */
+  background-color: rgba(255, 255, 255, 0.8); /* 투명 배경 */
+  padding: 5px 10px; /* 텍스트 패딩 */
+  border-radius: 5px; /* 둥근 모서리 */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .product img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.highlight {
+  color: #4a90e2;
+}
+
+
+/* Section for AI History */
+#ai-history {
+  background-color: #2ac3ad;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#ai-history h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 40px;
+}
+#ai-history p {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+#ai-history #test {
+  font-size: 1.45rem;
+  color: #212020;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: #ffd700;
+}
+
+/* Container for History Items */
+.container_section4 .history-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Individual History Item */
+.history-item {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-item .icon {
+  margin-bottom: 20px;
+}
+
+.history-item .icon img {
+  width: 60%;
+  height: 20%;
+}
+
+.history-item h3 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.history-item .highlight-number {
+  color: #ffd700;
+  font-size: 2.5rem;
+}
+
+.history-item p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .history-items {
+    flex-direction: column;
+  }
+
+  .history-item {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* footer */
+footer {background-color: #000;}
+footer .container {width: 1200px; margin: 0 auto; padding: 50px 0 0 0; color: #fff; }
+footer .container .depth1 {margin-top: 40px;}
+footer .container .depth1 > li {float: left; width: 20%;}
+footer .container .depth1 em {font-size: 16px; margin-bottom: 20px;}
+footer .container .depth2 {margin-top: 20px;}
+footer .container .depth2 > li {opacity: .4; font-size: 14px; margin-top: 5px; line-height: 1.8;}
+footer .container .etc-link {padding: 70px 0 30px; opacity: .4; overflow: hidden;}
+footer .container .etc-link li {display: inline-block; font-size: 14px;}
+footer .container .etc-link li:first-child:after {content: ''; display: inline-block; width: 1px; height: 11px; background-color: #fff; opacity: .4; margin: 0 13px 0 16px;}
+footer .container .etc {position: relative; height: 110px; border-top: 1px solid rgba(255,255,255,0.2)}
+footer .container .etc .copyright {position: absolute; left: 0; top: 40px; font-size: 14px; opacity: 0.4;}
+footer .container .etc .drop-down {display: inline-block; position: absolute; right: 0; top: 25px; min-width: 220px;}
+footer .container .etc .drop-down .drop-down-value {position: relative;}
+footer .container .etc .drop-down input[type="text"] {width: 100%; font-size: 12px; color: #999; background-color: #000; border: 1px solid #4d4d4d; height: 36px; padding: 11px 16px; font-weight: 500;}
+footer .container .etc .drop-down .btn-opener {display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; border: 0; cursor: pointer; padding: 1px 6px; background-color: transparent;}
+footer .container .etc .drop-down .btn-opener i {float: right; position: relative; display: block; width: 18px; height: 9px; overflow: hidden;}
+footer .container .etc .drop-down .btn-opener i:before {content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%) rotate(45deg); border-right: 2px solid #999; border-bottom: 2px solid #999; margin-top: -3px;}
+footer .container .etc .drop-down .btn-opener i.open:before {content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%) rotate(225deg); border-right: 2px solid #999; border-bottom: 2px solid #999; margin-top: 3px;}
+footer .container .etc .drop-down .item-list {display: none; position: absolute; bottom: 35px; left: 0; width: 100%; border: 1px solid #4d4d4d; background: #000; padding: 12px 0;}
+footer .container .etc .drop-down .item-list.open {display: block;}
+footer .container .etc .drop-down .item-list a {display: block; width: 100%; padding: 10px 16px; border: 0; background: transparent; font-size: 12px; line-height: 1; text-align: left; cursor: pointer; color: #fff;}
+footer .container .etc .drop-down .item-list a:hover {text-decoration: underline;}
+
+
+/* Customer Reviews Section */
+#customer-reviews {
+  background-color: #fdda44;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#customer-reviews h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#customer-reviews p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Review Container */
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Review Card */
+.review-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Review Header */
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.review-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.review-icon.on {
+  background-color: #00c19b;
+}
+
+.review-icon.os {
+  background-color: #5a9bd4;
+}
+
+.review-icon.ds {
+  background-color: #e96767;
+}
+
+.review-info {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Review Content */
+.review-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+

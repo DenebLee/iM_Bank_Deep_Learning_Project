@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="./login.css">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="common.css">
+  <!-- JS File -->
+  <script src="../../../Desktop/Deep_Project/Test/app.js"></script>
+  <script src="app2.js"></script>
+  <script src="./header.js"></script>
+  <title>SkinInsight 모델링</title>
+</head>
+
+<body>
+  <header id="header-placeholder"></header>
+
+  <main id="login-section">
+    <div class="login-container">
+      <h2>SkinInsight 로그인</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">아이디</label>
+          <input type="text" id="username" name="username" placeholder="아이디" required>
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" placeholder="비밀번호" required>
+        </div>
+        <button type="submit" class="login-btn">로그인</button>
+      </form>
+      <div id="loginMessage" style="color: red; margin-top: 15px;"></div>
+    </div>
+  </main>
+
+  <footer class="child">
+    <!-- container -->
+    <div class="container">
+      <div class="etc">
+        <span class="copyright">Copyright JeongSeob LEE. All Rights Reserved</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+<script src="./login.js"></script>
+</html>

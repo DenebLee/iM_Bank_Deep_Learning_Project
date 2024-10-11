@@ -1,0 +1,412 @@
+/* 일반 컨테이너 */
+html, body {  
+  height: 100%;
+}
+
+.container {  
+  width: 84%;  
+  margin: 0 auto;  
+  height: 100%;
+}
+
+/* 헤더 내비게이션 */
+.main-nav {  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  height: 80px;  
+  font-size: 16px;
+}
+
+.main-nav .logo img {  
+  width: 150px;  
+  margin: 10px 0 0 10px;
+}
+
+.main-nav ul {  
+  display: flex;
+}
+
+.main-nav ul li {  
+  padding: 25px 20px;
+}
+
+.main-nav ul li a {  
+  padding-bottom: 4px;  
+  color: #262626;  
+  font-size: 16px;
+}
+
+.main-nav ul li a:hover {  
+  border-bottom: 2px solid #262626;
+}
+
+.main-nav ul li a.login:hover {  
+  border-bottom: none;
+}
+
+.main-nav ul.main-menu {  
+  flex: 1;  
+  margin-left: 20px;
+}
+
+.main-nav ul.right-menu i {  
+  margin-left: 3px;  
+  font-size: 20px;
+}
+
+.main-nav .menu-btn {  
+  display: none;  
+  cursor: pointer;
+}
+
+/* 섹션 1 (이미지 포함 헤더) */
+.section-header {  
+  text-align: center;  
+  padding: 80px 20px;  
+  background-color: #f9f9f9;
+}
+
+.section-header h1 {  
+  font-size: 2.5rem;  
+  font-weight: bold;  
+  margin-bottom: 10px;
+}
+
+.section-header h3 {  
+  font-size: 1.2rem;  
+  color: #666;  
+  margin-bottom: 40px;
+}
+
+nav ul {  
+  display: flex;  
+  justify-content: center;  
+  list-style-type: none;  
+  padding: 0;
+}
+
+nav ul li {  
+  margin: 0 20px;
+}
+
+nav ul li a {  
+  color: #00c19b;  
+  font-size: 1rem;  
+  text-decoration: none;
+}
+
+nav ul li a:hover {  
+  text-decoration: underline;
+}
+
+.image-container {  
+  margin: 40px 0;
+}
+
+.image-container img {  
+  max-width: 100%;  
+  height: auto;  
+  border-radius: 8px;
+}
+
+.section-header p {  
+  font-size: 1.5rem;  
+  font-weight: bold;  
+  color: #333;  
+  margin: 40px 0;
+}
+
+/* 섹션 2 (브랜드 소개) */
+.section-brand-intro {  
+  padding: 80px 20px;  
+  background-color: #fff;  
+  text-align: center;
+}
+
+.section-brand-intro blockquote {  
+  font-size: 2rem;  
+  font-weight: bold;  
+  margin-bottom: 20px;  
+  color: #333;
+}
+
+.section-brand-intro p {  
+  font-size: 1.2rem;  
+  margin-bottom: 20px;  
+  line-height: 1.6;
+}
+
+.btn-container {  
+  margin-top: 40px;
+}
+
+.btn-more {  
+  display: inline-block;  
+  padding: 15px 30px;  
+  background-color: #00c19b;  
+  color: #fff;  
+  text-decoration: none;  
+  border-radius: 5px;  
+  font-size: 1rem;
+}
+
+.btn-more:hover {  
+  background-color: #00a285;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {  
+  .section-header h1 {    
+    font-size: 2rem;  
+  }  
+  .section-header p {    
+    font-size: 1.2rem;  
+  }  
+  .section-brand-intro blockquote {    
+    font-size: 1.6rem;  
+  }  
+  .section-brand-intro p {    
+    font-size: 1rem;  
+  }  
+  .btn-more {    
+    padding: 12px 24px;  
+  }
+}
+
+/* 팀 멤버 섹션 */
+#team-members {  
+  text-align: center;  
+  padding: 60px 20px;  
+  background-color: #f9f9f9;
+}
+
+#team-members h2 {  
+  font-size: 2.5rem;  
+  font-weight: bold;  
+  margin-bottom: 40px;
+}
+
+.team-grid {  
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);  
+  gap: 20px;
+}
+
+.team-card {  
+  background-color: #fff;  
+  border-radius: 10px;  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);  
+  padding: 20px;  
+  text-align: center;  
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {  
+  transform: translateY(-10px);
+}
+
+.team-image img {  
+  width: 150px;  
+  height: 150px;  
+  object-fit: cover;  
+  border-radius: 50%;  
+  margin-bottom: 15px;
+}
+
+.team-card h3 {  
+  font-size: 1.5rem;  
+  margin-bottom: 10px;  
+  color: #333;
+}
+
+.team-card p {  
+  font-size: 1rem;  
+  color: #777;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {  
+  .team-grid {    
+    grid-template-columns: repeat(2, 1fr);  
+  }
+}
+
+@media (max-width: 768px) {  
+  .team-grid {    
+    grid-template-columns: 1fr;  
+  }  
+  .team-card {    
+    max-width: 80%;    
+    margin: 0 auto;  
+  }
+}
+
+/* 푸터 */
+footer {
+  background-color: #000;
+}
+
+footer .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0 0 0;
+  color: #fff;
+}
+
+footer .container .depth1 {
+  margin-top: 40px;
+}
+
+footer .container .depth1 > li {
+  float: left;
+  width: 20%;
+}
+
+footer .container .depth1 em {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+footer .container .depth2 {
+  margin-top: 20px;
+}
+
+footer .container .depth2 > li {
+  opacity: .4;
+  font-size: 14px;
+  margin-top: 5px;
+  line-height: 1.8;
+}
+
+footer .container .etc-link {
+  padding: 70px 0 30px;
+  opacity: .4;
+  overflow: hidden;
+}
+
+footer .container .etc-link li {
+  display: inline-block;
+  font-size: 14px;
+}
+
+footer .container .etc-link li:first-child:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background-color: #fff;
+  opacity: .4;
+  margin: 0 13px 0 16px;
+}
+
+footer .container .etc {
+  position: relative;
+  height: 110px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer .container .etc .copyright {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+footer .container .etc .drop-down {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  min-width: 220px;
+}
+
+footer .container .etc .drop-down .drop-down-value {
+  position: relative;
+}
+
+footer .container .etc .drop-down input[type="text"] {
+  width: 100%;
+  font-size: 12px;
+  color: #999;
+  background-color: #000;
+  border: 1px solid #4d4d4d;
+  height: 36px;
+  padding: 11px 16px;
+  font-weight: 500;
+}
+
+footer .container .etc .drop-down .btn-opener {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  padding: 1px 6px;
+  background-color: transparent;
+}
+
+footer .container .etc .drop-down .btn-opener i {
+  float: right;
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 9px;
+  overflow: hidden;
+}
+
+footer .container .etc .drop-down .btn-opener i:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  margin-top: -3px;
+}
+
+footer .container .etc .drop-down .btn-opener i.open:before {
+  transform: translate(-50%, -50%) rotate(225deg);
+  margin-top: 3px;
+}
+
+footer .container .etc .drop-down .item-list {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  border: 1px solid #4d4d4d;
+  background: #000;
+  padding: 12px 0;
+}
+
+footer .container .etc .drop-down .item-list.open {
+  display: block;
+}
+
+footer .container .etc .drop-down .item-list a {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  cursor: pointer;
+  color: #fff;
+}
+
+footer .container .etc .drop-down .item-list a:hover {
+  text-decoration: underline;
+}
+
